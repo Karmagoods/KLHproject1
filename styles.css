@@ -1,0 +1,315 @@
+/* Reset and General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-bg: #f4f9fc;
+    --dark-bg: #1E3A5F;
+    --accent-color: #FFD700;
+    --hover-color: #FFEC8B;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-bg); /* Light blue background */
+    color: var(--dark-bg);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-bg); /* Dark blue */
+    color: #fff;
+    display: flex;
+    justify-content: space-between; /* Space between items in the header */
+    align-items: center;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    flex-wrap: nowrap; /* Prevent wrapping of header items */
+}
+
+/* Logo and Nav in horizontal alignment */
+header .logo {
+    margin-right: 1; /* Remove margin between logo and navigation */
+}
+
+nav {
+    margin-left: -60px; /* Move navigation to the left */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between nav items */
+    margin: 0;
+    align-items: center; /* Center items vertically */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--accent-color); /* Yellow text */
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a:hover {
+    color: var(--hover-color); /* Lighter yellow on hover */
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid var(--accent-color); /* Yellow underline for active page */
+    background-color: rgba(255, 215, 0, 0.2); /* Light background for active */
+    padding: 5px; /* Padding for better click area */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header items vertically for small screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items for mobile */
+        gap: 10px;
+        width: 100%;
+    }
+
+    .dark-mode-toggle {
+        margin-left: 0; /* Adjust dark mode toggle for small screens */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Add space below logo */
+    }
+}
+
+/* Logo Styling */
+.logo {
+    max-width: 150px; /* Adjust the size as needed */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* Responsive Logo Size */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 100px; /* Smaller size for mobile */
+    }
+}
+
+
+/* Main Content */
+main {
+    padding: 2rem;
+    text-align: center; /* Align text to the left for better readability */
+    max-width: 800px;
+    margin: 2rem auto; /* Center with margin */
+}
+
+section {
+    margin-bottom: 2rem; /* Space between sections */
+}
+
+section h2 {
+    font-size: 2rem;
+    color: var(--dark-bg); /* Dark blue for headings */
+    margin-bottom: 1rem; /* Space below heading */
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.8; /* Increased line-height for better readability */
+    color: var(--text-color);
+    margin-bottom: 1.5rem; /* Space below paragraphs */
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg); /* Dark blue */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 2px solid #ccc; /* Light border */
+}
+
+/* Footer Links */
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+header.dark-mode {
+    background-color: var(--dark-bg); /* Adjust header color for dark mode */
+}
+
+/* Dark Mode Toggle Button Styles */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 40px; /* Width of the toggle */
+    height: 20px; /* Height of the toggle */
+    position: relative;
+    margin-left: auto; /* Push to the right in header */
+    background-color: var(--light-bg); /* Light mode background */
+    border-radius: 50px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.dark-mode-toggle input {
+    opacity: 0; /* Hide checkbox */
+    width: 0;
+    height: 0;
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Default background for slider */
+    border-radius: 50px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Height of the sliding circle */
+    width: 26px; /* Width of the sliding circle */
+    left: 2px; /* Position it to the left */
+    bottom: 2px; /* Position it at the bottom */
+    background-color: white; /* Circle color */
+    border-radius: 50%; /* Make it circular */
+    transition: transform 0.3s ease; /* Smooth sliding effect */
+}
+
+/* Change background and slider position when checked */
+.dark-mode-toggle input:checked + .slider {
+    background-color: var(--accent-color); /* Change background in dark mode */
+}
+
+/* Article styles */
+.article-content {
+    background-color: #f9f9f9; /* Light background for articles */
+    color: black; /* Default text color */
+    padding: 10px; /* Padding for better readability */
+    border-radius: 5px; /* Rounded corners */
+}
+/* Article Hover Styles */
+article {
+    cursor: pointer; /* Changes the cursor to a hand when hovering over the article */
+    opacity: 1; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+article:hover {
+    opacity: 1; /* Makes the article fully visible on hover */
+}
+
+/* Dark mode styles for article content */
+body.dark-mode .article-content {
+    background-color: #1e1e1e; /* Darker background for articles in dark mode */
+    color: white; /* Light text color for articles in dark mode */
+}
+
+/* Comments Section */
+.comments {
+    background-color: var(--light-bg); /* Light background for contrast */
+    padding: 1.5rem; /* Space around the section */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    margin: 2rem 0; /* Space above and below the comment section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Limit the width to match the article */
+    margin-left: auto; /* Center it horizontally */
+    margin-right: auto; /* Center it horizontally */
+}
+
+.comments h4 {
+    font-size: 1.5rem; /* Title size */
+    margin: 1rem 0; /* Space around the title */
+    color: var(--dark-bg); /* Dark color for the title */
+}
+
+.comments form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.comments textarea {
+    width: 100%; /* Full width */
+    height: 100px; /* Set height for the textarea */
+    padding: 0.5rem; /* Inner space for comfort */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 1rem; /* Space below the textarea */
+    resize: none; /* Disable resizing */
+    font-family: Arial, sans-serif; /* Font for consistency */
+}
+
+.comments button {
+    background-color: var(--accent-color); /* Button color */
+    color: #fff; /* Text color */
+    padding: 0.5rem 1rem; /* Inner space */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 1rem; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.comments button:hover {
+    background-color: #f4a300; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .dark-mode-toggle {
+        margin-left: 0; /* Remove margin for better alignment */
+    }
+
+    main {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    footer {
+        padding: 0.5rem 0; /* Reduce padding in footer */
+    }
+}
