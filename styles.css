@@ -25,20 +25,17 @@ header {
     background-color: var(--dark-bg); /* Dark blue */
     color: #fff;
     display: flex;
-    justify-content: space-between; /* Space between items in the header */
-    align-items: center;
+    flex-direction: column; /* Stack header items vertically */
+    align-items: center; /* Center items horizontally */
     padding: 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    flex-wrap: nowrap; /* Prevent wrapping of header items */
+    text-align: center;
 }
-
-/* Logo and Nav in horizontal alignment */
-header .logo {
-    margin-right: 1; /* Remove margin between logo and navigation */
-}
-
-nav {
-    margin-left: -60px; /* Move navigation to the left */
+.logo {
+    width: 3cm;
+    height: 3cm;
+    margin-bottom: 1rem; /* Space between logo and navigation */
+    align-items: center; 
 }
 
 nav ul {
@@ -46,11 +43,9 @@ nav ul {
     display: flex;
     gap: 20px; /* Space between nav items */
     margin: 0;
-    align-items: center; /* Center items vertically */
-}
-
-nav ul li {
-    display: inline-block;
+    padding: 0;
+    justify-content: center; /* Center nav items */
+    align-items: center;
 }
 
 nav ul li a {
@@ -61,50 +56,18 @@ nav ul li a {
     transition: color 0.3s ease; /* Smooth transition */
 }
 
-nav ul li a:hover {
-    color: var(--hover-color); /* Lighter yellow on hover */
-}
-
-nav ul li a.active {
-    border-bottom: 2px solid var(--accent-color); /* Yellow underline for active page */
-    background-color: rgba(255, 215, 0, 0.2); /* Light background for active */
-    padding: 5px; /* Padding for better click area */
-}
-
-/* Responsive Design */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack header items vertically for small screens */
-        align-items: flex-start; /* Align items to the left */
+        align-items: center; /* Center items on small screens */
     }
 
     nav ul {
         flex-direction: column; /* Stack nav items for mobile */
         gap: 10px;
-        width: 100%;
-    }
-
-    .dark-mode-toggle {
-        margin-left: 0; /* Adjust dark mode toggle for small screens */
-    }
-
-    .logo {
-        margin-bottom: 10px; /* Add space below logo */
     }
 }
 
-/* Logo Styling */
-.logo {
-    max-width: 150px; /* Adjust the size as needed */
-    height: auto; /* Maintain the aspect ratio */
-}
-
-/* Responsive Logo Size */
-@media (max-width: 768px) {
-    .logo {
-        max-width: 100px; /* Smaller size for mobile */
-    }
-}
 
 
 /* Main Content */
